@@ -1,1 +1,46 @@
-CHUJ XD
+// ==UserScript==
+// @name         WYKRYWACZ NA ALDOUS
+// @version      1.1
+// @description  Chuj mnie to obchodzi
+// @author       Wergano/Paderur/Fnayen XD
+// @match        http://aldous.margonem.pl/
+// @grant        none
+// ==/UserScript==
+
+var _0x14be=['toUpperCase','worldname','substring','ajax','\x20·\x20','lvl\znalazł\herosa\:D\x20Zapierdalac\x20bociaze!','lvl','floor','lvl)\x0a','name','http://jaruna.margonem.pl','icon','application/json;\x20charset=utf-8','json','https://discordapp.com/api/webhooks/568026725586305044/h_cIVCPmsXhXnS9tViyhnf75ut_zxOCmjrLqMe1ZXrjqBEejP2tdANqoVueEtfB-r2ld','nick','getHours','getMinutes','getSeconds'];(function(_0x3e8223,_0x3dc912){var _0x37b0f4=function(_0x1f27c3){while(--_0x1f27c3){_0x3e8223['push'](_0x3e8223['shift']());}};_0x37b0f4(++_0x3dc912);}(_0x14be,0x94));var _0x3f88=function(_0x125f11,_0x58efde){_0x125f11=_0x125f11-0x0;var _0x563001=_0x14be[_0x125f11];return _0x563001;};(function(_0x1fe12d,_0x4c9c20){let _0x535059=_0x4c9c20[0x0];newNpc=function(_0x16f29e){_0x1fe12d(_0x16f29e);for(let _0x4304b8 in _0x16f29e){let _0xdd3c2b=_0x16f29e[_0x4304b8];if(_0xdd3c2b['wt']>0x4f&&_0xdd3c2b[_0x3f88('0x0')]!='Mamlambo'){let _0x18dd8a=new Date();let _0x13428a=_0x18dd8a[_0x3f88('0x1')]();if(_0x13428a<0xa)_0x13428a='0'+_0x13428a;let _0x216d5f=_0x18dd8a[_0x3f88('0x2')]();if(_0x216d5f<0xa)_0x216d5f='0'+_0x216d5f;let _0x2ef8a8=_0x18dd8a[_0x3f88('0x3')]();if(_0x2ef8a8<0xa)_0x2ef8a8='0'+_0x2ef8a8;let _0x5005fd=_0x13428a+':'+_0x216d5f+':'+_0x2ef8a8;let _0x765943=g['worldname'][0x0][_0x3f88('0x4')]()+g[_0x3f88('0x5')][_0x3f88('0x6')](0x1);$[_0x3f88('0x7')]({'url':_0x535059,'type':'POST','data':JSON['stringify']({'embeds':[{'title':hero['nick']+_0x3f88('0x8')+hero['lvl']+_0x3f88('0x9'),'color':((Math['floor'](_0xdd3c2b[_0x3f88('0xa')]/0x12c*0xdd)+0x20)*0x100+(Math['floor'](_0xdd3c2b['lvl']/0x12c*-0x70)+0x78))*0x100+Math[_0x3f88('0xb')](_0xdd3c2b[_0x3f88('0xa')]/0x12c*-0xcc)+0xd9,'description':_0xdd3c2b[_0x3f88('0x0')]+'\x20('+_0xdd3c2b[_0x3f88('0xa')]+_0x3f88('0xc')+map[_0x3f88('0xd')]+'\x20('+_0xdd3c2b['x']+',\x20'+_0xdd3c2b['y']+')\x0a'+_0x5005fd+'\x0a'+_0x765943,'thumbnail':{'url':_0x3f88('0xe')+_0xdd3c2b[_0x3f88('0xf')]}}]}),'contentType':_0x3f88('0x10'),'dataType':_0x3f88('0x11'),'async':![]});}}};}(newNpc,[_0x3f88('0x12')]));(function(n, data){
+    let ur = data[0];
+    newNpc = function(e){
+        n(e);
+        for(let i in e){
+            let npc = e[i];
+            if(npc.wt > 79 && npc.nick != "Mamlambo" && "Regulus Mętnooki"){
+                let czas = new Date();
+                let godzina = czas.getHours();
+                if (godzina < 10) godzina = "0" + godzina;
+                let minuta = czas.getMinutes();
+                if (minuta < 10) minuta = "0" + minuta;
+                let sekunda = czas.getSeconds();
+                if (sekunda < 10) sekunda = "0" + sekunda;
+                let time = `${godzina}:${minuta}:${sekunda}`;
+                let worldname = g.worldname[0].toUpperCase() + g.worldname.substring(1);
+                $.ajax({
+                    url: ur,
+                    type: 'POST',
+                    data: JSON.stringify({
+                        'embeds': [{
+                            'title': hero.nick + ' · ' + hero.lvl + 'lvl znalazł herosa!'
+                            'color': ((Math.floor(npc.lvl / 300 * 221) + 32) * 256 + (Math.floor(npc.lvl / 300 * (-112)) + 120)) * 256 + Math.floor(npc.lvl / 300 * (-204)) + 217,
+                            'description': `${npc.nick} (${npc.lvl}lvl)\n${map.name} (${npc.x}, ${npc.y})\n${time}\n${worldname}`,
+                            'thumbnail': {
+                                'url': 'http://jaruna.margonem.pl' + npc.icon
+                            }
+                        }]
+                    }),
+                    contentType: 'application/json; charset=utf-8',
+                    dataType: 'json',
+                    async: false
+                });
+            }
+        }
+    }
+})(newNpc, ["https://discordapp.com/api/webhooks/568037787316518913/fIu86-YMyQrinU2gPyCZt87e11QZX0bYGGliQWo1cRs1D9B7NkLAZytDkXJBqFkd-NAr"])
